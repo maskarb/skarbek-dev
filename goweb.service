@@ -1,0 +1,12 @@
+[Unit]
+Description=goweb
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStart=/home/ubuntu/projects/skarbek.dev/web-server
+WorkingDirectory=/home/ubuntu/projects/skarbek.dev
+
+[Install]
+WantedBy=multi-user.target
