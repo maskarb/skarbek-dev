@@ -16,4 +16,5 @@
 
 certs/
 creds.json
+goweb.service
 web-server

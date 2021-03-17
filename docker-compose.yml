@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  server:
+    image: web:server
+    container_name: server
+    entrypoint:
+      - /web-server
+    privileged: true
+    ports:
+      - 8080:8080
+      - 8443:8443
+    devices:
+      - '/dev/i2c-1:/dev/i2c-1'
+    volumes:
+      - '/etc/letsencrypt/live/skarbek.dev:/etc/letsencrypt/live/skarbek.dev'
+      - '/etc/letsencrypt/archive/skarbek.dev:/etc/letsencrypt/archive/skarbek.dev'
