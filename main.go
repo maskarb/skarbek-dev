@@ -20,7 +20,7 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 
-	"github.com/maskarb/skarbek.dev/sensor"
+	"github.com/maskarb/skarbek-dev/sensor"
 )
 
 // Credentials which stores google ids.
