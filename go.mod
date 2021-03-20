@@ -9,5 +9,9 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/render v1.0.1
+	github.com/jinzhu/now v1.1.2 // indirect
+	github.com/mattn/go-sqlite3 v1.14.6 // indirect
 	golang.org/x/oauth2 v0.0.0-20210220000619-9bb904979d93
+	gorm.io/driver/sqlite v1.1.4
+	gorm.io/gorm v1.21.4
 )

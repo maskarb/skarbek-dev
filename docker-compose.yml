@@ -4,14 +4,19 @@ services:
   server:
     image: web:server
     container_name: server
+    build:
+      context: .
+    working_dir: /app
     entrypoint:
-      - /web-server
+      - /app/web-server
     privileged: true
     ports:
-      - 8080:8080
-      - 8443:8443
+      - 80:8080
+      - 443:8443
     devices:
       - '/dev/i2c-1:/dev/i2c-1'
     volumes:
-      - '/etc/letsencrypt/live/skarbek.dev:/etc/letsencrypt/live/skarbek.dev'
-      - '/etc/letsencrypt/archive/skarbek.dev:/etc/letsencrypt/archive/skarbek.dev'
+      - '/etc/letsencrypt:/etc/letsencrypt'
+      - './web:/app/web'
+      - './db:/app/db'
+      - './creds.json:/app/creds.json'
