@@ -1,4 +1,5 @@
 # cloud.google.com/go v0.65.0
+## explicit; go 1.11
 cloud.google.com/go/compute/metadata
 # github.com/d2r2/go-bsbmp v0.0.0-20190515110334-3b4b3aea8375
 ## explicit
@@ -6,41 +7,46 @@ github.com/d2r2/go-bsbmp
 # github.com/d2r2/go-i2c v0.0.0-20191123181816-73a8a799d6bc
 ## explicit
 github.com/d2r2/go-i2c
-# github.com/d2r2/go-logger v0.0.0-20181221090742-9998a510495e
-## explicit
+# github.com/d2r2/go-logger v0.0.0-20210606094344-60e9d1233e22
+## explicit; go 1.15
 github.com/d2r2/go-logger
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
 # github.com/go-chi/chi v1.5.4
-## explicit
+## explicit; go 1.16
 github.com/go-chi/chi
 github.com/go-chi/chi/middleware
 # github.com/go-chi/render v1.0.1
 ## explicit
 github.com/go-chi/render
 # github.com/golang/protobuf v1.4.2
+## explicit; go 1.9
 github.com/golang/protobuf/proto
 # github.com/jinzhu/inflection v1.0.0
+## explicit
 github.com/jinzhu/inflection
-# github.com/jinzhu/now v1.1.2
-## explicit
+# github.com/jinzhu/now v1.1.3
+## explicit; go 1.12
 github.com/jinzhu/now
-# github.com/mattn/go-sqlite3 v1.14.6
-## explicit
+# github.com/mattn/go-sqlite3 v1.14.9
+## explicit; go 1.12
 github.com/mattn/go-sqlite3
 # golang.org/x/net v0.0.0-20200822124328-c89045814202
+## explicit; go 1.11
 golang.org/x/net/context
 golang.org/x/net/context/ctxhttp
-# golang.org/x/oauth2 v0.0.0-20210220000619-9bb904979d93
-## explicit
+# golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
+## explicit; go 1.11
 golang.org/x/oauth2
+golang.org/x/oauth2/authhandler
 golang.org/x/oauth2/google
 golang.org/x/oauth2/google/internal/externalaccount
 golang.org/x/oauth2/internal
 golang.org/x/oauth2/jws
 golang.org/x/oauth2/jwt
 # google.golang.org/appengine v1.6.6
+## explicit; go 1.11
 google.golang.org/appengine
 google.golang.org/appengine/internal
 google.golang.org/appengine/internal/app_identity
@@ -52,6 +58,7 @@ google.golang.org/appengine/internal/remote_api
 google.golang.org/appengine/internal/urlfetch
 google.golang.org/appengine/urlfetch
 # google.golang.org/protobuf v1.25.0
+## explicit; go 1.9
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
 google.golang.org/protobuf/internal/descfmt
@@ -78,11 +85,11 @@ google.golang.org/protobuf/reflect/protoreflect
 google.golang.org/protobuf/reflect/protoregistry
 google.golang.org/protobuf/runtime/protoiface
 google.golang.org/protobuf/runtime/protoimpl
-# gorm.io/driver/sqlite v1.1.4
-## explicit
+# gorm.io/driver/sqlite v1.2.6
+## explicit; go 1.14
 gorm.io/driver/sqlite
-# gorm.io/gorm v1.21.4
-## explicit
+# gorm.io/gorm v1.22.4
+## explicit; go 1.14
 gorm.io/gorm
 gorm.io/gorm/callbacks
 gorm.io/gorm/clause
