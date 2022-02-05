@@ -9,7 +9,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"net/url"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -103,12 +102,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 // 	}
 // }
 
-func redirect(w http.ResponseWriter, r *http.Request) {
-	targetURL := url.URL{Scheme: "https", Host: r.Host, Path: r.URL.Path, RawQuery: r.URL.RawQuery}
-	log.Printf("redirect from %s to %s", r.RemoteAddr, targetURL.String())
-	http.Redirect(w, r, targetURL.String(), http.StatusPermanentRedirect)
-}
-
 func SetDBMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		ctx := context.WithValue(r.Context(), constants.DBContextID, models.DB.WithContext(context.TODO()))
@@ -170,11 +163,10 @@ func main() {
 	router := Routes()
 
 	server := &http.Server{
-		Addr:    ":8443",
+		Addr:    ":8080",
 		Handler: router,
 	}
-	go http.ListenAndServe(":8080", http.HandlerFunc(redirect)) //nolint
 
 	log.Printf("starting server: %s", server.Addr)
-	log.Fatal(server.ListenAndServeTLS("/etc/letsencrypt/live/skarbek.dev/fullchain.pem", "/etc/letsencrypt/live/skarbek.dev/privkey.pem"))
+	log.Fatal(server.ListenAndServe())
 }
