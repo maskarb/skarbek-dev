@@ -9,6 +9,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -137,7 +138,7 @@ func Routes() *chi.Mux {
 }
 
 func init() {
-	file, err := ioutil.ReadFile("./creds.json")
+	file, err := os.ReadFile("/etc/oauth/creds.json")
 	if err != nil {
 		log.Fatalf("File error: %v\n", err)
 	}

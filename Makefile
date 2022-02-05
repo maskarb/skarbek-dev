@@ -1,7 +1,7 @@
 
 
 IMAGE_TAG_BASE ?= localhost:32000/skarbek-dev
-GIT_COMMIT ?= $(shell git rev-parse HEAD)
+GIT_COMMIT ?= $(shell git rev-parse --short HEAD)
 IMG ?= $(IMAGE_TAG_BASE):$(GIT_COMMIT)
 
 docker-build:
