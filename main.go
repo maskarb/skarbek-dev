@@ -21,8 +21,6 @@ import (
 	"github.com/maskarb/skarbek-dev/internal/constants"
 	"github.com/maskarb/skarbek-dev/internal/models"
 	"github.com/maskarb/skarbek-dev/internal/sensor"
-	"github.com/maskarb/skarbek-dev/internal/taskdb"
-	"github.com/maskarb/skarbek-dev/internal/taskstore"
 )
 
 // Credentials which stores google ids.
@@ -124,8 +122,8 @@ func Routes() *chi.Mux {
 
 	router.Route("/api/v1", func(r chi.Router) {
 		r.Mount("/sensor", sensor.NewSensorServer().Routes())
-		r.Mount("/tasks", taskstore.NewTaskServer().Routes())
-		r.Mount("/tasksdb", taskdb.Routes())
+		// r.Mount("/tasks", taskstore.NewTaskServer().Routes())
+		// r.Mount("/tasksdb", taskdb.Routes())
 	})
 	router.HandleFunc("/", indexHandler)
 	router.HandleFunc("/login", loginHandler)
@@ -156,7 +154,7 @@ func init() {
 		Endpoint: google.Endpoint,
 	}
 
-	models.Setup()
+	// models.Setup()
 }
 
 func main() {
