@@ -117,7 +117,7 @@ func Routes() *chi.Mux {
 		middleware.RequestID,
 		middleware.Recoverer,
 		middleware.Timeout(60*time.Second),
-		SetDBMiddleware,
+		// SetDBMiddleware,
 	)
 
 	router.Route("/api/v1", func(r chi.Router) {
