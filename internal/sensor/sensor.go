@@ -118,22 +118,27 @@ func initializePiSensor() {
 	// Use i2cdetect utility to find device address over the i2c-bus
 	i2c, err := i2c.NewI2C(0x77, 1)
 	if err != nil {
-		log.Fatalf("new_i2c error: %v", err)
+		log.Printf("new_i2c error: %v", err)
+		return
 	}
 	if err := logger.ChangePackageLogLevel("i2c", logger.InfoLevel); err != nil {
-		log.Fatalf("error changing package logging: %v", err)
+		log.Printf("error changing package logging: %v", err)
+		return
 	}
 
 	sense, err := bsbmp.NewBMP(bsbmp.BME280, i2c)
 	if err != nil {
-		log.Fatalf("new_bmp error: %v", err)
+		log.Printf("new_bmp error: %v", err)
+		return
 	}
 	if err := logger.ChangePackageLogLevel("bsbmp", logger.InfoLevel); err != nil {
-		log.Fatalf("error changing package logging: %v", err)
+		log.Printf("error changing package logging: %v", err)
+		return
 	}
 
 	PiSensor = &Sensor{sense, nil, nil, nil, nil, nil}
 	if err := PiSensor.getEnvironment(); err != nil {
-		log.Fatalf("failed to initialize PiSensor: %v", err)
+		log.Printf("failed to initialize PiSensor: %v", err)
+		return
 	}
 }
