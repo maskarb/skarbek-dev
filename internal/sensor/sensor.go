@@ -24,7 +24,9 @@ func NewSensorStore() *SensorStore {
 	initializePiSensor()
 	ss := &SensorStore{}
 	ss.sensors = make(map[int]*Sensor)
-	ss.sensors[int(*PiSensor.SensorID)] = PiSensor
+	if PiSensor != nil {
+		ss.sensors[int(*PiSensor.SensorID)] = PiSensor
+	}
 	return ss
 }
 
